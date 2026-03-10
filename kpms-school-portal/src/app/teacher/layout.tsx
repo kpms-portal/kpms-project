@@ -13,24 +13,26 @@ export default async function TeacherLayout({
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    redirect("/auth/login");
-  }
+  let userName = "Teacher";
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("id", user.id)
-    .single();
+  if (user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", user.id)
+      .single();
 
-  if (!profile || profile.role !== "teacher") {
-    redirect("/auth/login");
+    if (!profile || profile.role !== "teacher") {
+      redirect("/auth/login");
+    }
+
+    userName = profile.full_name || "Teacher";
   }
 
   return (
     <AppShell
       role="teacher"
-      userName={profile.full_name}
+      userName={userName}
       pageTitle="Teacher Portal"
     >
       {children}

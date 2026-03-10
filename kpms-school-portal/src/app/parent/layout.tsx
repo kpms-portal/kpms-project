@@ -13,22 +13,24 @@ export default async function ParentLayout({
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    redirect('/auth/login');
-  }
+  let userName = "Parent";
 
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('full_name, role')
-    .eq('id', user.id)
-    .single();
+  if (user) {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('full_name, role')
+      .eq('id', user.id)
+      .single();
 
-  if (!profile || profile.role !== 'parent') {
-    redirect('/auth/login');
+    if (!profile || profile.role !== 'parent') {
+      redirect('/auth/login');
+    }
+
+    userName = profile.full_name || "Parent";
   }
 
   return (
-    <AppShell role="parent" userName={profile.full_name}>
+    <AppShell role="parent" userName={userName}>
       {children}
     </AppShell>
   );

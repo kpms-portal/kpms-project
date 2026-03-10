@@ -13,33 +13,35 @@ export default async function StudentLayout({
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    redirect("/login");
-  }
+  let userName = "Student";
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("id", user.id)
-    .single();
+  if (user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", user.id)
+      .single();
 
-  if (!profile) {
-    redirect("/login");
-  }
+    if (!profile) {
+      redirect("/auth/login");
+    }
 
-  // Get the student record linked to this user account
-  const { data: studentAccount } = await supabase
-    .from("student_accounts")
-    .select("student_id")
-    .eq("user_id", user.id)
-    .single();
+    userName = profile.full_name || "Student";
 
-  if (!studentAccount) {
-    redirect("/login");
+    // Get the student record linked to this user account
+    const { data: studentAccount } = await supabase
+      .from("student_accounts")
+      .select("student_id")
+      .eq("user_id", user.id)
+      .single();
+
+    if (!studentAccount) {
+      redirect("/auth/login");
+    }
   }
 
   return (
-    <AppShell role="student" userName={profile.full_name}>
+    <AppShell role="student" userName={userName}>
       {children}
     </AppShell>
   );
