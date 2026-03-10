@@ -37,8 +37,7 @@ function LoginForm() {
         return;
       }
 
-      router.push('/auth/callback');
-      router.refresh();
+      window.location.href = '/auth/callback';
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.');
       setLoading(false);
