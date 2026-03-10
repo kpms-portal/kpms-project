@@ -1,0 +1,360 @@
+/* KPMS Donation Form */
+#kpms-donate-app {
+    max-width: 520px;
+    margin: 0 auto;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #333;
+}
+
+/* Progress Bar (frontend) */
+.kpms-don-progress-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    text-align: center;
+}
+.kpms-don-progress-title {
+    font-size: 14px;
+    color: #003087;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.kpms-don-progress-numbers {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.kpms-don-progress-numbers strong {
+    color: #003087;
+    font-size: 22px;
+}
+.kpms-don-progress-bar-outer {
+    background: #e9ecef;
+    border-radius: 20px;
+    height: 18px;
+    overflow: hidden;
+    position: relative;
+}
+.kpms-don-progress-bar-inner {
+    background: linear-gradient(90deg, #003087, #FFD100);
+    height: 100%;
+    border-radius: 20px;
+    transition: width 1s ease;
+    min-width: 4px;
+}
+.kpms-don-progress-donors {
+    font-size: 12px;
+    color: #999;
+    margin-top: 6px;
+}
+
+/* Steps */
+.kpms-don-step {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.kpms-don-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #003087;
+    font-size: 20px;
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+/* Amount Buttons */
+.kpms-don-amounts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.kpms-don-amt {
+    padding: 14px 8px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    color: #003087;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.kpms-don-amt:hover {
+    border-color: #003087;
+    background: #f0f4ff;
+}
+.kpms-don-amt.active {
+    border-color: #003087;
+    background: #003087;
+    color: #FFD100;
+}
+
+/* Custom Amount */
+.kpms-don-custom {
+    margin-bottom: 20px;
+}
+.kpms-don-custom label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+}
+.kpms-don-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+.kpms-don-input-wrap:focus-within {
+    border-color: #003087;
+}
+.kpms-don-dollar {
+    padding: 10px 12px;
+    background: #f8f9fa;
+    color: #003087;
+    font-weight: 700;
+    font-size: 16px;
+}
+.kpms-don-input-wrap input {
+    flex: 1;
+    border: none;
+    padding: 10px 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Type Toggle */
+.kpms-don-type-toggle {
+    display: flex;
+    gap: 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.kpms-don-type {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.2s;
+    background: #fff;
+}
+.kpms-don-type input { display: none; }
+.kpms-don-type:hover { background: #f8f9fa; }
+.kpms-don-type.active {
+    background: #003087;
+    color: #FFD100;
+}
+
+/* Buttons */
+.kpms-don-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #003087;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.kpms-don-btn:hover:not(:disabled) {
+    background: #001f5c;
+    transform: translateY(-1px);
+}
+.kpms-don-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.kpms-don-btn.secondary {
+    background: #e9ecef;
+    color: #333;
+}
+.kpms-don-btn.secondary:hover {
+    background: #dee2e6;
+}
+.kpms-don-btn-row {
+    display: flex;
+    gap: 10px;
+}
+.kpms-don-btn-row .kpms-don-btn {
+    flex: 1;
+}
+
+/* Form Fields */
+.kpms-don-field {
+    margin-bottom: 14px;
+}
+.kpms-don-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+.kpms-don-field .req { color: #e74c3c; }
+.kpms-don-field input,
+.kpms-don-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+.kpms-don-field input:focus,
+.kpms-don-field textarea:focus {
+    border-color: #003087;
+    outline: none;
+}
+.kpms-don-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* Success */
+.kpms-don-success-icon {
+    width: 60px;
+    height: 60px;
+    background: #28a745;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 12px;
+}
+.kpms-don-sub {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Payment Instructions */
+.kpms-don-instructions {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+.kpms-don-instructions h4 {
+    color: #003087;
+    margin: 0 0 12px;
+    font-size: 15px;
+}
+.kpms-don-method {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+.kpms-don-method h5 {
+    margin: 0 0 6px;
+    color: #003087;
+    font-size: 13px;
+}
+.kpms-don-method p {
+    margin: 3px 0;
+    font-size: 13px;
+    color: #555;
+}
+.kpms-don-method strong {
+    color: #333;
+}
+.kpms-don-ref {
+    text-align: center;
+    margin-top: 12px;
+}
+.kpms-don-ref strong {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+.kpms-don-ref-code {
+    display: inline-block;
+    background: #003087;
+    color: #FFD100;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.kpms-don-ref small {
+    display: block;
+    color: #999;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.kpms-don-note {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Error */
+.kpms-don-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* Loading spinner */
+.kpms-don-btn.loading {
+    position: relative;
+    color: transparent;
+}
+.kpms-don-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: kpms-spin 0.6s linear infinite;
+}
+@keyframes kpms-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    #kpms-donate-app { margin: 0 8px; }
+    .kpms-don-step { padding: 20px 16px; }
+    .kpms-don-amounts { grid-template-columns: repeat(2, 1fr); }
+    .kpms-don-ref-code { font-size: 14px; padding: 6px 14px; }
+}

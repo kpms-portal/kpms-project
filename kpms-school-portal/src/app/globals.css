@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-playfair);
+
+  /* KPMS Design System */
+  --color-kpms-blue: #003087;
+  --color-kpms-gold: #FFD100;
+  --color-kpms-near-black: #1a1a2e;
+  --color-kpms-gray: #5a6577;
+  --color-kpms-border: #e2e8f0;
+  --color-kpms-bg: #F5F7FB;
+  --color-kpms-success: #0A8F6C;
+  --color-kpms-error: #E8443A;
+  --color-kpms-blue-light: #1D5FAF;
+
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* Spring bounce easing utility */
+@utility ease-spring {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --background: #F5F7FB;
+  --foreground: #1a1a2e;
+}
+
+@layer base {
+  * {
+    @apply border-kpms-border;
+  }
+  body {
+    @apply bg-kpms-bg text-kpms-near-black font-sans;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* Scrollbar styling */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}

@@ -1,0 +1,24 @@
+import { redirect } from "next/navigation";
+import { createServerSupabase } from "@/lib/supabase/server";
+
+export default async function Home() {
+  const supabase = await createServerSupabase();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/auth/login");
+  }
+
+  // Fetch the user's profile to determine their role
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .single();
+
+  const role = profile?.role ?? "student";
+
+  redirect(`/dashboard/${role}`);
+}

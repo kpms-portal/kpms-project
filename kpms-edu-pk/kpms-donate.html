@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Give Zakat — Kamal Public Middle School | Ramadan 2026</title>
+<meta name="description" content="Your Zakat changes lives. 100% of every dollar goes directly to providing world-class education to children in Abbottabad, Pakistan. Zero fees. Zero deductions.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & VARIABLES ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #003087;
+  --blue-deep: #001a4d;
+  --blue-light: #E8F4FD;
+  --gold: #FFD100;
+  --gold-light: #FFF3CC;
+  --gold-dark: #C9A400;
+  --white: #FFFFFF;
+  --text: #222222;
+  --text-muted: #5a6577;
+  --green: #2ECC71;
+  --green-deep: #1a9c54;
+  --teal: #0A8F6C;
+  --ramadan-emerald: #064E3B;
+  --ramadan-emerald-light: #0B7A5A;
+  --ramadan-cream: #FEF9F0;
+  --ramadan-warm: #F5ECD7;
+  --spring: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--ramadan-cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+  background: var(--blue-deep);
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  padding: 8px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar a { color: var(--gold); text-decoration: none; }
+.topbar a:hover { text-decoration: underline; }
+.topbar-left { display: flex; gap: 24px; align-items: center; }
+.topbar-right { display: flex; gap: 16px; align-items: center; }
+.parent-portal-btn {
+  background: var(--gold);
+  color: var(--blue-deep);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 11px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+.parent-portal-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* ===== NAV ===== */
+.nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--white);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
+.nav-inner {
+  max-width: 1400px; margin: 0 auto;
+  padding: 0 60px; height: 80px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; }
+.nav-logo-icon svg { width: 32px; height: 32px; }
+.nav-logo-text { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--blue-deep); }
+.nav-logo-sub { font-size: 11px; font-weight: 500; color: var(--text-muted); letter-spacing: 0.5px; display: block; margin-top: -2px; }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-links a {
+  padding: 10px 18px; text-decoration: none; font-size: 14px;
+  font-weight: 600; color: var(--text); border-radius: 8px;
+  transition: all 0.3s;
+}
+.nav-links a:hover { color: var(--blue); background: var(--blue-light); }
+.nav-links a.active { color: var(--ramadan-emerald); background: rgba(6,78,59,0.08); }
+.donate-nav-btn {
+  background: var(--ramadan-emerald) !important;
+  color: var(--white) !important;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px;
+}
+.donate-nav-btn:hover { background: var(--ramadan-emerald-light) !important; transform: translateY(-1px); }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(165deg, var(--blue-deep) 0%, #001233 40%, var(--ramadan-emerald) 100%);
+}
+.hero-bg-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(ellipse 800px 600px at 80% 20%, rgba(255,209,0,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(10,143,108,0.15) 0%, transparent 70%);
+}
+
+/* Geometric Islamic pattern overlay */
+.hero-pattern-overlay {
+  position: absolute; inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FFD100' stroke-width='1'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Cpath d='M40 10L70 40L40 70L10 40Z'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Floating stars / moon */
+.celestial {
+  position: absolute; top: 8%; right: 10%;
+  width: 180px; height: 180px;
+  animation: celestialFloat 8s ease-in-out infinite;
+}
+@keyframes celestialFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+.crescent-moon {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  box-shadow: inset -30px 4px 0 0 var(--gold);
+  position: relative;
+  opacity: 0.6;
+}
+.star {
+  position: absolute;
+  color: var(--gold);
+  animation: starTwinkle 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+.star:nth-child(2) { top: -20px; right: 10px; font-size: 18px; animation-delay: 0.5s; }
+.star:nth-child(3) { top: 20px; right: -30px; font-size: 14px; animation-delay: 1s; }
+.star:nth-child(4) { top: 60px; right: -15px; font-size: 10px; animation-delay: 1.5s; }
+.star:nth-child(5) { top: -10px; right: -50px; font-size: 12px; animation-delay: 2s; }
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1400px; margin: 0 auto;
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.hero-text { color: var(--white); }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,209,0,0.12);
+  border: 1px solid rgba(255,209,0,0.25);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+}
+.hero-badge .badge-dot {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.hero h1 .gold-text { color: var(--gold); }
+.hero h1 .emerald-text { color: #4ADE80; }
+.hero-subtitle {
+  font-size: 19px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+.hero-stats {
+  display: flex; gap: 40px;
+  margin-bottom: 40px;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 6px;
+}
+.hero-verse {
+  font-family: 'Amiri', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  border-left: 3px solid var(--gold);
+  padding-left: 20px;
+  margin-top: 10px;
+  line-height: 1.8;
+}
+.hero-verse .arabic {
+  display: block;
+  font-size: 22px;
+  font-style: normal;
+  direction: rtl;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 6px;
+}
+
+/* Hero Right — Donation Card */
+.hero-card-area {
+  display: flex;
+  justify-content: center;
+}
+.donation-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.3),
+    0 0 0 1px rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.donation-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--gold), var(--ramadan-emerald), var(--gold));
+}
+.card-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.card-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  margin-bottom: 6px;
+}
+.card-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.zero-fee-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(46,204,113,0.1);
+  color: var(--green-deep);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-top: 12px;
+  letter-spacing: 0.3px;
+}
+.zero-fee-badge svg { width: 14px; height: 14px; }
+
+/* Donation Amount Grid */
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.amount-btn {
+  position: relative;
+  padding: 16px 8px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: var(--white);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s var(--spring);
+  overflow: hidden;
+}
+.amount-btn:hover {
+  border-color: var(--ramadan-emerald);
+  background: rgba(6,78,59,0.03);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(6,78,59,0.12);
+}
+.amount-btn.selected {
+  border-color: var(--ramadan-emerald);
+  background: rgba(6,78,59,0.06);
+  box-shadow: 0 0 0 3px rgba(6,78,59,0.15);
+}
+.amount-btn.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 6px; right: 8px;
+  font-size: 11px;
+  color: var(--ramadan-emerald);
+  font-weight: 700;
+}
+.amount-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  display: block;
+  line-height: 1;
+}
+.amount-impact {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+/* Custom Amount */
+.custom-amount {
+  margin-bottom: 20px;
+}
+.custom-amount-input {
+  width: 100%;
+  padding: 14px 16px 14px 36px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.3s;
+  background: var(--white);
+}
+.custom-amount-input:focus {
+  outline: none;
+  border-color: var(--ramadan-emerald);
+  box-shadow: 0 0 0 3px rgba(6,78,59,0.12);
+}
+.custom-amount-wrap {
+  position: relative;
+}
+.custom-amount-wrap::before {
+  content: '$';
+  position: absolute;
+  left: 16px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Zakat Toggle */
+.zakat-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--ramadan-warm);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.zakat-toggle-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.zakat-toggle-label span {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.toggle-switch {
+  width: 48px; height: 26px;
+  background: #cbd5e1;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.toggle-switch.active { background: var(--ramadan-emerald); }
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 20px; height: 20px;
+  background: var(--white);
+  border-radius: 50%;
+  transition: transform 0.3s var(--spring);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.toggle-switch.active::after { transform: translateX(22px); }
+
+/* Donate Button */
+.donate-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--ramadan-emerald) 0%, var(--ramadan-emerald-light) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s var(--spring);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+.donate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(6,78,59,0.35);
+}
+.donate-btn:active { transform: translateY(0); }
+.donate-btn .btn-shimmer {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.payment-methods {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.payment-methods svg { width: 14px; height: 14px; color: var(--green-deep); }
+
+.card-footer {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ===== SCROLLING TICKER ===== */
+.ticker {
+  background: var(--gold);
+  padding: 14px 0;
+  overflow: hidden;
+  position: relative;
+}
+.ticker-track {
+  display: flex;
+  animation: ticker-scroll 30s linear infinite;
+  white-space: nowrap;
+}
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  letter-spacing: 0.5px;
+}
+.ticker-item .separator {
+  width: 6px; height: 6px;
+  background: var(--blue-deep);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+/* ===== IMPACT SECTION ===== */
+.impact-section {
+  padding: 100px 60px;
+  background: var(--white);
+  position: relative;
+}
+.impact-section::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, var(--ramadan-cream), var(--white));
+}
+.section-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700;
+  color: var(--ramadan-emerald);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 2px;
+  background: var(--ramadan-emerald);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--blue-deep);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin-bottom: 60px;
+  line-height: 1.7;
+}
+
+/* Impact Cards */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.impact-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 20px;
+  padding: 40px 32px;
+  transition: all 0.4s var(--spring);
+  position: relative;
+  overflow: hidden;
+}
+.impact-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--spring);
+  transform-origin: left;
+}
+.impact-card:hover::before { transform: scaleX(1); }
+.impact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.1);
+  border-color: transparent;
+}
+.impact-icon {
+  width: 60px; height: 60px;
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+.impact-card:nth-child(1) .impact-icon { background: rgba(255,107,53,0.1); }
+.impact-card:nth-child(2) .impact-icon { background: rgba(0,180,216,0.1); }
+.impact-card:nth-child(3) .impact-icon { background: rgba(123,45,142,0.1); }
+.impact-card:nth-child(4) .impact-icon { background: rgba(46,204,113,0.1); }
+.impact-card:nth-child(5) .impact-icon { background: rgba(255,209,0,0.15); }
+.impact-card:nth-child(6) .impact-icon { background: rgba(6,78,59,0.1); }
+.impact-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  margin-bottom: 12px;
+}
+.impact-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===== WHAT $50 DOES SECTION ===== */
+.breakdown-section {
+  padding: 100px 60px;
+  background: linear-gradient(165deg, var(--blue-deep) 0%, #001233 50%, var(--ramadan-emerald) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.breakdown-section .hero-pattern-overlay { opacity: 0.03; }
+.breakdown-section .section-label { color: var(--gold); }
+.breakdown-section .section-label::before { background: var(--gold); }
+.breakdown-section .section-title { color: var(--white); }
+.breakdown-section .section-subtitle { color: rgba(255,255,255,0.65); }
+
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.breakdown-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 36px 30px;
+  transition: all 0.4s var(--spring);
+}
+.breakdown-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+.breakdown-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--gold);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.breakdown-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+.breakdown-items {
+  list-style: none;
+}
+.breakdown-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+.breakdown-items li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ===== STUDENT STORIES ===== */
+.stories-section {
+  padding: 100px 60px;
+  background: var(--ramadan-cream);
+}
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.story-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 48px 40px;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.4s var(--spring);
+  position: relative;
+}
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+.story-quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.4;
+  position: absolute;
+  top: 20px; left: 32px;
+}
+.story-text {
+  font-size: 17px;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.story-author {
+  display: flex; align-items: center; gap: 14px;
+}
+.story-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.story-card:nth-child(1) .story-avatar { background: rgba(0,180,216,0.12); }
+.story-card:nth-child(2) .story-avatar { background: rgba(255,107,53,0.12); }
+.story-card:nth-child(3) .story-avatar { background: rgba(123,45,142,0.12); }
+.story-card:nth-child(4) .story-avatar { background: rgba(46,204,113,0.12); }
+.story-author-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--blue-deep);
+}
+.story-author-role {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===== TRANSPARENCY / HOW IT WORKS ===== */
+.transparency-section {
+  padding: 100px 60px;
+  background: var(--white);
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+.step-card {
+  text-align: center;
+  position: relative;
+}
+.step-card::after {
+  content: '→';
+  position: absolute;
+  right: -20px; top: 36px;
+  font-size: 24px;
+  color: var(--gold);
+  font-weight: 700;
+}
+.step-card:last-child::after { display: none; }
+.step-number {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--ramadan-emerald);
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px;
+}
+.step-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  margin-bottom: 10px;
+}
+.step-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===== FAQ ===== */
+.faq-section {
+  padding: 100px 60px;
+  background: var(--ramadan-cream);
+}
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: var(--white);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0,0,0,0.04);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.faq-question {
+  padding: 22px 28px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue-deep);
+  user-select: none;
+}
+.faq-toggle {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--ramadan-warm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  color: var(--ramadan-emerald);
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-toggle {
+  background: var(--ramadan-emerald);
+  color: var(--white);
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--spring);
+}
+.faq-answer-inner {
+  padding: 0 28px 22px;
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ===== CTA BANNER ===== */
+.cta-banner {
+  padding: 100px 60px;
+  background: linear-gradient(135deg, var(--ramadan-emerald) 0%, var(--blue-deep) 100%);
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner .hero-pattern-overlay { opacity: 0.04; }
+.cta-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+.cta-banner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 900;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.cta-banner p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.cta-donate-btn {
+  display: inline-flex;
+  align-items: center; gap: 10px;
+  padding: 20px 48px;
+  background: var(--gold);
+  color: var(--blue-deep);
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s var(--spring);
+  text-decoration: none;
+}
+.cta-donate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(255,209,0,0.35);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--blue-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 70px 60px 30px;
+}
+.footer-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand p { font-size: 14px; line-height: 1.8; margin-top: 14px; max-width: 280px; }
+.footer h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 18px;
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+.footer-bottom a { color: var(--gold); text-decoration: none; }
+.footer-bottom a:hover { text-decoration: underline; }
+.footer-social {
+  display: flex; gap: 14px;
+}
+.footer-social a {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+.footer-social a:hover { background: var(--gold); color: var(--blue-deep); transform: translateY(-2px); }
+
+/* ===== PROGRESS BAR (Floating) ===== */
+.progress-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  z-index: 999;
+  width: 280px;
+  border: 1px solid rgba(0,0,0,0.06);
+  transform: translateY(120%);
+  transition: transform 0.5s var(--spring);
+}
+.progress-float.visible { transform: translateY(0); }
+.progress-float-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px;
+}
+.progress-float-title { font-size: 13px; font-weight: 700; color: var(--blue-deep); }
+.progress-float-amount { font-size: 13px; font-weight: 600; color: var(--ramadan-emerald); }
+.progress-bar-bg {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ramadan-emerald), var(--gold));
+  border-radius: 50px;
+  transition: width 1.5s var(--spring);
+}
+.progress-float-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; gap: 48px; }
+  .hero-card-area { justify-content: flex-start; }
+  .donation-card { max-width: 100%; }
+  .celestial { display: none; }
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .step-card::after { display: none; }
+  .stories-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .topbar { padding: 8px 20px; font-size: 12px; }
+  .topbar-left { gap: 12px; }
+  .nav-inner { padding: 0 20px; height: 70px; }
+  .nav-links { display: none; }
+  .hero { min-height: auto; }
+  .hero-content { padding: 60px 20px; }
+  .hero h1 { font-size: 32px; }
+  .hero-stats { gap: 24px; }
+  .hero-stat-value { font-size: 28px; }
+  .donation-card { padding: 32px 24px; }
+  .amount-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .amount-value { font-size: 20px; }
+  .impact-section, .breakdown-section, .stories-section,
+  .transparency-section, .faq-section, .cta-banner { padding: 70px 20px; }
+  .impact-grid { grid-template-columns: 1fr; }
+  .breakdown-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+  .footer { padding: 48px 20px 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .progress-float { width: calc(100% - 40px); right: 20px; bottom: 20px; }
+}
+@media (max-width: 480px) {
+  .amount-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats { flex-direction: column; gap: 16px; align-items: flex-start; }
+}
+
+/* ===== ANIMATIONS ON SCROLL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s var(--spring);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ===== MOBILE MENU TOGGLE (simplified for donate page) ===== */
+.mobile-toggle { display: none; cursor: pointer; background: none; border: none; padding: 8px; }
+.mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; border-radius: 2px; }
+@media (max-width: 768px) {
+  .mobile-toggle { display: block; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📞 +92 992 383 883</span>
+    <span>✉️ <a href="mailto:info@kpms.edu.pk">info@kpms.edu.pk</a></span>
+  </div>
+  <div class="topbar-right">
+    <a href="#" class="parent-portal-btn">PARENT PORTAL</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="#FFD100" stroke-width="2"/>
+          <text x="20" y="26" text-anchor="middle" fill="#FFD100" font-family="Playfair Display" font-size="16" font-weight="700">K</text>
+        </svg>
+      </div>
+      <div>
+        <span class="nav-logo-text">Kamal Public</span>
+        <span class="nav-logo-sub">Middle School — Abbottabad</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/admissions">Admissions</a>
+      <a href="/programs">Programs</a>
+      <a href="/donate" class="active">Give</a>
+      <a href="/donate" class="donate-nav-btn">Donate Now</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-pattern-overlay"></div>
+
+  <!-- Crescent Moon + Stars -->
+  <div class="celestial">
+    <div class="crescent-moon">
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+      <span class="star">✦</span>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <!-- LEFT TEXT -->
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Ramadan 2026 — Zakat Campaign
+      </div>
+      <h1>
+        Your Zakat<br>
+        Can Light the<br>
+        <span class="gold-text">Path to Their</span><br>
+        <span class="emerald-text">Future</span>
+      </h1>
+      <p class="hero-subtitle">
+        In the mountains of Abbottabad, 120 children dream of a future
+        most of the world takes for granted. Your Zakat doesn't just fund a school —
+        it builds confidence, sparks critical thinking, and opens doors
+        that would otherwise remain forever closed.
+      </p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value">120</div>
+          <div class="hero-stat-label">Students</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">40+</div>
+          <div class="hero-stat-label">Years Serving</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">100%</div>
+          <div class="hero-stat-label">Goes to Kids</div>
+        </div>
+      </div>
+
+      <div class="hero-verse">
+        <span class="arabic">مَن ذَا ٱلَّذِى يُقرِضُ ٱللَّهَ قَرضًا حَسَنًا</span>
+        "Who will loan Allah a beautiful loan, that He may multiply it for them many times over?"
+        <br>— Surah Al-Baqarah 2:245
+      </div>
+    </div>
+
+    <!-- RIGHT — DONATION CARD -->
+    <div class="hero-card-area">
+      <div class="donation-card">
+        <div class="card-header">
+          <h2>Give Your Zakat</h2>
+          <p>Every dollar reaches these children directly.</p>
+          <div class="zero-fee-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            0% FEES — 100% GOES TO KPMS
+          </div>
+        </div>
+
+        <!-- Amount Buttons -->
+        <div class="amount-grid" id="amountGrid">
+          <button class="amount-btn" data-amount="50">
+            <span class="amount-value">$50</span>
+            <span class="amount-impact">1 month supplies</span>
+          </button>
+          <button class="amount-btn selected" data-amount="100">
+            <span class="amount-value">$100</span>
+            <span class="amount-impact">Full term books</span>
+          </button>
+          <button class="amount-btn" data-amount="150">
+            <span class="amount-value">$150</span>
+            <span class="amount-impact">Tech access</span>
+          </button>
+          <button class="amount-btn" data-amount="200">
+            <span class="amount-value">$200</span>
+            <span class="amount-impact">Student scholarship</span>
+          </button>
+          <button class="amount-btn" data-amount="500">
+            <span class="amount-value">$500</span>
+            <span class="amount-impact">Classroom upgrade</span>
+          </button>
+          <button class="amount-btn" data-amount="1000">
+            <span class="amount-value">$1000</span>
+            <span class="amount-impact">Transform a year</span>
+          </button>
+        </div>
+
+        <!-- Custom Amount -->
+        <div class="custom-amount">
+          <div class="custom-amount-wrap">
+            <input type="number" class="custom-amount-input" id="customAmount" placeholder="Enter custom amount" min="1">
+          </div>
+        </div>
+
+        <!-- Zakat Toggle -->
+        <div class="zakat-toggle">
+          <div class="zakat-toggle-label">
+            Mark as Zakat
+            <span>Zakat-eligible contribution</span>
+          </div>
+          <div class="toggle-switch active" id="zakatToggle"></div>
+        </div>
+
+        <!-- Donate Button -->
+        <button class="donate-btn" id="donateBtn">
+          <span class="btn-shimmer"></span>
+          Give $100 via Zelle — Zero Fees
+        </button>
+
+        <div class="payment-methods">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Zelle · Wire Transfer · Direct Deposit — No middleman, no fees
+        </div>
+
+        <div class="card-footer">
+          Tax-deductible where applicable. You'll receive a confirmation receipt immediately.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLING TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">🕌 RAMADAN MUBARAK <span class="separator"></span></div>
+    <div class="ticker-item">💯 ZERO PLATFORM FEES <span class="separator"></span></div>
+    <div class="ticker-item">📚 EVERY DOLLAR EDUCATES <span class="separator"></span></div>
+    <div class="ticker-item">🌙 FULFILL YOUR ZAKAT <span class="separator"></span></div>
+    <div class="ticker-item">🎓 40+ YEARS OF IMPACT <span class="separator"></span></div>
+    <div class="ticker-item">❤️ 120 CHILDREN COUNTING ON YOU <span class="separator"></span></div>
+    <div class="ticker-item">🕌 RAMADAN MUBARAK <span class="separator"></span></div>
+    <div class="ticker-item">💯 ZERO PLATFORM FEES <span class="separator"></span></div>
+    <div class="ticker-item">📚 EVERY DOLLAR EDUCATES <span class="separator"></span></div>
+    <div class="ticker-item">🌙 FULFILL YOUR ZAKAT <span class="separator"></span></div>
+    <div class="ticker-item">🎓 40+ YEARS OF IMPACT <span class="separator"></span></div>
+    <div class="ticker-item">❤️ 120 CHILDREN COUNTING ON YOU <span class="separator"></span></div>
+  </div>
+</div>
+
+<!-- IMPACT SECTION -->
+<section class="impact-section">
+  <div class="section-inner">
+    <div class="section-label reveal">WHERE YOUR MONEY GOES</div>
+    <h2 class="section-title reveal">This Isn't Charity.<br>It's an <em>Investment</em> in Human Potential.</h2>
+    <p class="section-subtitle reveal">
+      These children come from families where college was never a conversation.
+      Your donation doesn't just keep the lights on — it builds a pipeline from
+      a mountain village in Pakistan to global competitiveness.
+    </p>
+
+    <div class="impact-grid">
+      <div class="impact-card reveal reveal-delay-1">
+        <div class="impact-icon">📱</div>
+        <h3>Digital Empowerment</h3>
+        <p>Computer labs, tablets, and digital literacy programs that prepare students for a technology-driven world. Kids who've never touched a keyboard learn to code.</p>
+      </div>
+      <div class="impact-card reveal reveal-delay-2">
+        <div class="impact-icon">🧠</div>
+        <h3>Critical Thinking</h3>
+        <p>Curriculum designed around problem-solving, not memorization. We teach children <em>how</em> to think — a skill that levels the playing field against any student, anywhere.</p>
+      </div>
+      <div class="impact-card reveal reveal-delay-3">
+        <div class="impact-icon">📚</div>
+        <h3>Modern Learning Materials</h3>
+        <p>Updated textbooks, science kits, art supplies, and English language resources. The same quality materials used in top schools across the globe.</p>
+      </div>
+      <div class="impact-card reveal reveal-delay-4">
+        <div class="impact-icon">👩‍🏫</div>
+        <h3>Teacher Development</h3>
+        <p>Competitive salaries attract talented educators. Ongoing training keeps them sharp. Great teachers are the single greatest predictor of student success.</p>
+      </div>
+      <div class="impact-card reveal reveal-delay-5">
+        <div class="impact-icon">🏗️</div>
+        <h3>Infrastructure</h3>
+        <p>Safe, clean classrooms with proper heating, ventilation, and lighting. A library that grows every semester. A science lab that actually works.</p>
+      </div>
+      <div class="impact-card reveal reveal-delay-5">
+        <div class="impact-icon">🌍</div>
+        <h3>Global Readiness</h3>
+        <p>English fluency, presentation skills, and exposure to international standards. We're not preparing students for Abbottabad — we're preparing them for the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOUR DONATION DOES -->
+<section class="breakdown-section">
+  <div class="hero-pattern-overlay"></div>
+  <div class="section-inner">
+    <div class="section-label reveal">EVERY DOLLAR HAS A PURPOSE</div>
+    <h2 class="section-title reveal">See Exactly What Your Gift Creates</h2>
+    <p class="section-subtitle reveal">
+      There are no overheads siphoned away, no platform cuts, no mystery.
+      Here is precisely what happens when you give.
+    </p>
+
+    <div class="breakdown-grid">
+      <div class="breakdown-card reveal reveal-delay-1">
+        <div class="breakdown-amount">$50</div>
+        <div class="breakdown-title">The Spark</div>
+        <ul class="breakdown-items">
+          <li>One month of school supplies for a student</li>
+          <li>Notebooks, pens, geometry sets, art materials</li>
+          <li>One child no longer borrows — they own their learning</li>
+        </ul>
+      </div>
+      <div class="breakdown-card reveal reveal-delay-2">
+        <div class="breakdown-amount">$100</div>
+        <div class="breakdown-title">The Foundation</div>
+        <ul class="breakdown-items">
+          <li>Full-term textbooks and workbooks for one student</li>
+          <li>English language learning materials</li>
+          <li>Access to the school's digital learning library</li>
+        </ul>
+      </div>
+      <div class="breakdown-card reveal reveal-delay-3">
+        <div class="breakdown-amount">$200</div>
+        <div class="breakdown-title">The Scholarship</div>
+        <ul class="breakdown-items">
+          <li>Full tuition coverage for one student for a semester</li>
+          <li>Uniform, books, and supplies included</li>
+          <li>A child who wouldn't attend school now can</li>
+        </ul>
+      </div>
+      <div class="breakdown-card reveal reveal-delay-4">
+        <div class="breakdown-amount">$500</div>
+        <div class="breakdown-title">The Upgrade</div>
+        <ul class="breakdown-items">
+          <li>Equip an entire classroom with modern resources</li>
+          <li>Whiteboards, teaching aids, educational posters</li>
+          <li>Every student in that room benefits for years</li>
+        </ul>
+      </div>
+      <div class="breakdown-card reveal reveal-delay-4">
+        <div class="breakdown-amount">$1,000</div>
+        <div class="breakdown-title">The Transformation</div>
+        <ul class="breakdown-items">
+          <li>Fund a computer station with 2–3 laptops</li>
+          <li>Digital literacy curriculum for an entire grade</li>
+          <li>Students go from zero tech access to coding</li>
+        </ul>
+      </div>
+      <div class="breakdown-card reveal reveal-delay-5">
+        <div class="breakdown-amount">$5,000</div>
+        <div class="breakdown-title">The Legacy</div>
+        <ul class="breakdown-items">
+          <li>Fully fund a science laboratory upgrade</li>
+          <li>Equipment for physics, chemistry, and biology</li>
+          <li>Generations of students will learn here</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT STORIES -->
+<section class="stories-section">
+  <div class="section-inner">
+    <div class="section-label reveal">REAL VOICES, REAL IMPACT</div>
+    <h2 class="section-title reveal">They Didn't Have a Chance.<br>Until Someone Gave Them One.</h2>
+    <p class="section-subtitle reveal">
+      Every student at KPMS has a story. These are just a few.
+    </p>
+
+    <div class="stories-grid">
+      <div class="story-card reveal reveal-delay-1">
+        <div class="story-quote-mark">"</div>
+        <p class="story-text">
+          Before KPMS, I thought computers were only for rich people in Islamabad.
+          Now I can type in English, search for information, and I'm learning to build
+          websites. My father is a shopkeeper — he never imagined this for me.
+        </p>
+        <div class="story-author">
+          <div class="story-avatar">👦</div>
+          <div>
+            <div class="story-author-name">Ahmed, Grade 7</div>
+            <div class="story-author-role">Aspiring Software Developer</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-card reveal reveal-delay-2">
+        <div class="story-quote-mark">"</div>
+        <p class="story-text">
+          My daughter comes home and teaches her younger siblings what she learned
+          that day. The confidence she has now — speaking in English, solving math
+          problems — she is becoming someone I always hoped she could be.
+        </p>
+        <div class="story-author">
+          <div class="story-avatar">👩</div>
+          <div>
+            <div class="story-author-name">Fatima's Mother</div>
+            <div class="story-author-role">Parent of Grade 5 Student</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-card reveal reveal-delay-3">
+        <div class="story-quote-mark">"</div>
+        <p class="story-text">
+          I teach because I believe every child in Abbottabad deserves the same
+          opportunity as a child in London or New York. The funding we receive
+          lets me bring real science experiments into the classroom, not just textbook theory.
+        </p>
+        <div class="story-author">
+          <div class="story-avatar">👨‍🏫</div>
+          <div>
+            <div class="story-author-name">Mr. Irfan</div>
+            <div class="story-author-role">Science Teacher, 8 Years</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-card reveal reveal-delay-4">
+        <div class="story-quote-mark">"</div>
+        <p class="story-text">
+          When I was told I could join the English debate team, I cried. Nobody
+          in my family has ever spoken English publicly. Last month, I won
+          second place in a district competition. Second place. Me.
+        </p>
+        <div class="story-author">
+          <div class="story-avatar">👧</div>
+          <div>
+            <div class="story-author-name">Sana, Grade 8</div>
+            <div class="story-author-role">Debate Team Member</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="transparency-section">
+  <div class="section-inner">
+    <div class="section-label reveal">FULL TRANSPARENCY</div>
+    <h2 class="section-title reveal">How Your Donation Works</h2>
+    <p class="section-subtitle reveal">
+      No GoFundMe fees. No processing charges. No middlemen.
+      We use direct transfer methods so every single dollar reaches KPMS.
+    </p>
+
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-number">1</div>
+        <h3>Choose Amount</h3>
+        <p>Select a preset amount or enter a custom donation. Mark it as Zakat if applicable.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-number">2</div>
+        <h3>Send via Zelle</h3>
+        <p>Transfer directly using Zelle, wire transfer, or direct deposit. Zero platform fees taken.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-number">3</div>
+        <h3>Receive Confirmation</h3>
+        <p>Get an immediate receipt via email with your donation details and Zakat documentation.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-4">
+        <div class="step-number">4</div>
+        <h3>See the Impact</h3>
+        <p>Receive quarterly updates with photos, progress reports, and exactly how your funds were used.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="section-label reveal">QUESTIONS & ANSWERS</div>
+    <h2 class="section-title reveal">Common Questions</h2>
+    <p class="section-subtitle reveal">Everything you need to know about giving your Zakat to KPMS.</p>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          Is my donation Zakat-eligible?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes. KPMS serves students from families who qualify as Zakat recipients under Islamic guidelines. Your contribution funds education for children who would otherwise not have access, which is a recognized category of Zakat distribution. You can toggle the Zakat marker on your donation for your personal records.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          Why Zelle instead of a regular donation platform?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Platforms like GoFundMe charge 2.9% + $0.30 per transaction — on a $1,000 donation, that's $29.30 that never reaches the children. Zelle transfers are free for both sender and receiver, meaning 100% of your $1,000 goes directly to KPMS. When every dollar matters, we refuse to lose any to processing fees.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          How will I know my donation was used properly?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Every donor receives quarterly impact reports with photographs, student progress metrics, and detailed financial breakdowns showing exactly how funds were allocated. We believe in radical transparency — you deserve to see your Zakat at work.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          Is my donation tax-deductible?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Tax deductibility depends on your country's regulations. We provide detailed donation receipts that you can submit to your tax professional. For donors in the United States, we are working to establish 501(c)(3) status through a fiscal sponsor. Contact us for the most current information.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          Can I donate monthly / set up recurring giving?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Absolutely. You can set up a recurring Zelle transfer through your bank, or contact us to arrange a monthly commitment. Recurring donors receive priority updates and a special end-of-year impact summary.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-banner">
+  <div class="hero-pattern-overlay"></div>
+  <div class="cta-inner">
+    <h2>This Ramadan, Be the<br>Reason a Child Believes<br>in Their Future</h2>
+    <p>
+      You have the power right now — in this moment — to change the trajectory of a child's entire life.
+      Not with thoughts and prayers alone, but with action.
+    </p>
+    <a href="#mainNav" class="cta-donate-btn">
+      🌙 Give Your Zakat Now
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #fff;">
+        Kamal Public<br>Middle School
+      </div>
+      <p>Building confidence, critical thinking, and digital empowerment since 1984. Serving the children of Abbottabad, Pakistan.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About KPMS</a></li>
+        <li><a href="/admissions">Admissions</a></li>
+        <li><a href="/programs">Academic Programs</a></li>
+        <li><a href="/donate">Give / Donate</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li>Abbottabad, KPK</li>
+        <li>Pakistan</li>
+        <li><a href="tel:+92992383883">+92 992 383 883</a></li>
+        <li><a href="mailto:info@kpms.edu.pk">info@kpms.edu.pk</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For Donors</h4>
+      <ul class="footer-links">
+        <li><a href="#">Zakat Guidelines</a></li>
+        <li><a href="#">Impact Reports</a></li>
+        <li><a href="#">Financial Transparency</a></li>
+        <li><a href="#">Wire Transfer Info</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Kamal Public Middle School. All rights reserved. | <a href="#">Privacy</a> · <a href="#">Accessibility</a></span>
+    <div class="footer-social">
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="Instagram">ig</a>
+      <a href="#" title="YouTube">▶</a>
+      <a href="#" title="WhatsApp">wa</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING PROGRESS WIDGET -->
+<div class="progress-float" id="progressFloat">
+  <div class="progress-float-header">
+    <span class="progress-float-title">🌙 Ramadan Goal</span>
+    <span class="progress-float-amount">$12,450 / $25,000</span>
+  </div>
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" style="width: 49.8%"></div>
+  </div>
+  <div class="progress-float-sub">78 donors so far — be the next</div>
+</div>
+
+<script>
+// ===== DONATION CARD LOGIC =====
+const amountBtns = document.querySelectorAll('.amount-btn');
+const customInput = document.getElementById('customAmount');
+const donateBtn = document.getElementById('donateBtn');
+const zakatToggle = document.getElementById('zakatToggle');
+let selectedAmount = 100;
+let isZakat = true;
+
+function updateDonateBtn() {
+  const label = isZakat ? 'Zakat' : 'Sadaqah';
+  const amt = selectedAmount ? `$${selectedAmount.toLocaleString()}` : '';
+  donateBtn.textContent = '';
+  const shimmer = document.createElement('span');
+  shimmer.className = 'btn-shimmer';
+  donateBtn.appendChild(shimmer);
+  donateBtn.appendChild(document.createTextNode(
+    amt ? `Give ${amt} via Zelle — Zero Fees` : 'Enter an Amount'
+  ));
+}
+
+amountBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    amountBtns.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedAmount = parseInt(btn.dataset.amount);
+    customInput.value = '';
+    updateDonateBtn();
+  });
+});
+
+customInput.addEventListener('input', () => {
+  amountBtns.forEach(b => b.classList.remove('selected'));
+  selectedAmount = parseInt(customInput.value) || 0;
+  updateDonateBtn();
+});
+
+zakatToggle.addEventListener('click', () => {
+  isZakat = !isZakat;
+  zakatToggle.classList.toggle('active', isZakat);
+  updateDonateBtn();
+});
+
+donateBtn.addEventListener('click', () => {
+  if (!selectedAmount) return;
+  // Show payment instructions modal or redirect
+  const zakatText = isZakat ? ' (Zakat)' : ' (Sadaqah)';
+  const msg = `Thank you for choosing to give $${selectedAmount.toLocaleString()}${zakatText}!\n\n` +
+    `To complete your donation with ZERO fees:\n\n` +
+    `📱 Zelle: Send to donate@kpms.edu.pk\n` +
+    `🏦 Wire Transfer: Contact info@kpms.edu.pk for bank details\n\n` +
+    `Please include "${isZakat ? 'ZAKAT' : 'SADAQAH'}-${Date.now().toString(36).toUpperCase()}" as your memo.\n\n` +
+    `You will receive a confirmation receipt within 24 hours.`;
+  alert(msg);
+});
+
+// ===== FAQ ACCORDION =====
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+      openItem.classList.remove('open');
+      openItem.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+
+    // Open clicked (if wasn't open)
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// ===== SCROLL REVEAL =====
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ===== NAV SCROLL EFFECT =====
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+// ===== FLOATING PROGRESS WIDGET =====
+const progressFloat = document.getElementById('progressFloat');
+window.addEventListener('scroll', () => {
+  progressFloat.classList.toggle('visible', window.scrollY > 600);
+});
+
+// ===== SMOOTH SCROLL TO TOP (CTA) =====
+document.querySelector('.cta-donate-btn').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
