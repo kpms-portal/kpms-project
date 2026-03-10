@@ -11,14 +11,15 @@ export default async function Home() {
     redirect("/auth/login");
   }
 
-  // Fetch the user's profile to determine their role
   const { data: profile } = await supabase
     .from("profiles")
     .select("role")
     .eq("id", user.id)
     .single();
 
-  const role = profile?.role ?? "student";
+  if (!profile) {
+    redirect("/auth/login");
+  }
 
-  redirect(`/dashboard/${role}`);
+  redirect(`/${profile.role}`);
 }
