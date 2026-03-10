@@ -11,7 +11,7 @@ interface ClassRow {
   section: string;
   capacity: number | null;
   teacher_id: string | null;
-  teacher?: { full_name: string } | null;
+  teacher?: { full_name: string }[] | null;
 }
 
 export default async function ClassesPage() {
@@ -87,7 +87,7 @@ export default async function ClassesPage() {
                     {cls.capacity ?? "—"}
                   </div>
                   <span className="text-sm text-muted-foreground truncate max-w-full">
-                    {cls.teacher?.full_name || "Unassigned"}
+                    {cls.teacher?.[0]?.full_name || "Unassigned"}
                   </span>
                 </div>
               ))}
