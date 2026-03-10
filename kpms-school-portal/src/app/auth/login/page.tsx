@@ -28,36 +28,37 @@ function LoginForm() {
     setLoading(true);
 
     try {
-      const supabase = createClient();
+      const supabase = createClient()
       const { data, error: authError } = await supabase.auth.signInWithPassword({
         email,
         password,
-      });
+      })
 
       if (authError) {
-        setError(authError.message);
-        setLoading(false);
-        return;
+        setError(authError.message)
+        setLoading(false)
+        return
       }
 
-      // Look up role directly client-side - no server round-trip needed
-      const { data: profile, error: profileError } = await supabase
-        .from('profiles')
-        .select('role')
-        .eq('id', data.user.id)
-        .single();
+      // Use server API to get role (bypasses RLS cookie timing issues)
+      const res = await fetch('/api/auth/me', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: data.user.id }),
+      })
 
-      if (profileError || !profile) {
-        setError('Account setup incomplete. Please contact your administrator.');
-        setLoading(false);
-        return;
+      const result = await res.json()
+
+      if (!res.ok || !result.role) {
+        setError('Account setup incomplete. Please contact your administrator.')
+        setLoading(false)
+        return
       }
 
-      // Navigate directly to role dashboard
-      window.location.href = `/${profile.role}`;
+      window.location.href = `/${result.role}`
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.');
-      setLoading(false);
+      setError(err instanceof Error ? err.message : 'An unexpected error occurred.')
+      setLoading(false)
     }
   }
 
