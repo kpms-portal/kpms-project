@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { createServerSupabase } from "@/lib/supabase/server";
+import { createServerSupabase, createServiceRoleClient } from "@/lib/supabase/server";
 import { AppShell } from "@/components/layout/app-shell";
 
 export default async function StudentLayout({
@@ -8,6 +8,7 @@ export default async function StudentLayout({
   children: React.ReactNode;
 }) {
   const supabase = await createServerSupabase();
+  const adminClient = createServiceRoleClient();
 
   const {
     data: { user },
@@ -16,20 +17,20 @@ export default async function StudentLayout({
   let userName = "Student";
 
   if (user) {
-    const { data: profile } = await supabase
+    const { data: profile } = await adminClient
       .from("profiles")
       .select("*")
       .eq("id", user.id)
       .single();
 
-    if (!profile) {
+    if (!profile || profile.role !== "student") {
       redirect("/auth/login");
     }
 
     userName = profile.full_name || "Student";
 
     // Get the student record linked to this user account
-    const { data: studentAccount } = await supabase
+    const { data: studentAccount } = await adminClient
       .from("student_accounts")
       .select("student_id")
       .eq("user_id", user.id)
