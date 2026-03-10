@@ -46,7 +46,7 @@ export default async function ClassesPage() {
         <Card>
           <CardContent className="p-0">
             <EmptyState
-              icon={School}
+              icon={<School className="h-12 w-12" />}
               title="No classes yet"
               description="No classes have been created. Add classes to get started."
             />

@@ -50,7 +50,7 @@ export default async function AnnouncementsPage() {
         <Card>
           <CardContent className="p-0">
             <EmptyState
-              icon={Megaphone}
+              icon={<Megaphone className="h-12 w-12" />}
               title="No announcements"
               description="There are no announcements yet. Create one to notify parents, teachers, and students."
             />
