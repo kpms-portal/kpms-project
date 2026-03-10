@@ -33,8 +33,8 @@ function LoginForm() {
         return;
       }
 
-      // Middleware handles role-based routing on redirect to /
-      router.push('/');
+      // Callback route handles server-side role lookup and redirect
+      router.push('/auth/callback');
       router.refresh();
     } catch {
       setError('An unexpected error occurred. Please try again.');
