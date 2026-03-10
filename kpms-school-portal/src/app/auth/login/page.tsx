@@ -29,7 +29,10 @@ function LoginForm() {
 
     try {
       const supabase = createClient();
-      const { error: authError } = await supabase.auth.signInWithPassword({ email, password });
+      const { data, error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
       if (authError) {
         setError(authError.message);
@@ -37,7 +40,21 @@ function LoginForm() {
         return;
       }
 
-      window.location.href = '/auth/callback';
+      // Look up role directly client-side - no server round-trip needed
+      const { data: profile, error: profileError } = await supabase
+        .from('profiles')
+        .select('role')
+        .eq('id', data.user.id)
+        .single();
+
+      if (profileError || !profile) {
+        setError('Account setup incomplete. Please contact your administrator.');
+        setLoading(false);
+        return;
+      }
+
+      // Navigate directly to role dashboard
+      window.location.href = `/${profile.role}`;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.');
       setLoading(false);
