@@ -40,7 +40,7 @@ function LoginForm() {
         return
       }
 
-      // Use server API to get role (bypasses RLS cookie timing issues)
+      // Use server API to get role (bypasses RLS, uses service role key)
       const res = await fetch('/api/auth/me', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -55,6 +55,9 @@ function LoginForm() {
         return
       }
 
+      // Set session in cookie storage so middleware can read it
+      // The @supabase/ssr createBrowserClient handles cookie sync automatically
+      // Just navigate - the session token is already in the request headers via the client
       window.location.href = `/${result.role}`
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred.')
