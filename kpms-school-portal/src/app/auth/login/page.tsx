@@ -1,3 +1,4 @@
+// v2 - set-session auth flow
 'use client';
 
 import { useState, Suspense } from 'react';
