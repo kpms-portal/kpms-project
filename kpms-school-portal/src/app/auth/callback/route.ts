@@ -5,6 +5,8 @@ import { NextResponse } from 'next/server'
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
+  const tokenHash = searchParams.get('token_hash')
+  const type = searchParams.get('type')
 
   const cookieStore = await cookies()
 
@@ -13,23 +15,28 @@ export async function GET(request: Request) {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
+        getAll() { return cookieStore.getAll() },
         setAll(cookiesToSet) {
           try {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
             )
-          } catch {
-            // Called from Server Component context
-          }
+          } catch {}
         },
       },
     }
   )
 
-  // Handle OAuth code exchange if present
+  // Handle password recovery (token_hash + type=recovery)
+  if (tokenHash && type === 'recovery') {
+    const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: 'recovery' })
+    if (error) {
+      return NextResponse.redirect(`${origin}/auth/login?error=invalid_reset_link`)
+    }
+    return NextResponse.redirect(`${origin}/auth/update-password`)
+  }
+
+  // Handle OAuth / magic link code exchange
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code)
     if (error) {

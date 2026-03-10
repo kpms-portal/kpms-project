@@ -28,6 +28,8 @@ export default function RegisterPage() {
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   // Children
   const [children, setChildren] = useState<ChildForm[]>([emptyChild()]);
@@ -40,14 +42,20 @@ export default function RegisterPage() {
     e.preventDefault();
     setError(null);
 
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters.');
-      return;
-    }
-    if (password !== confirmPassword) {
-      setError('Passwords do not match.');
-      return;
-    }
+    const checks = {
+      length: password.length >= 8,
+      upper: /[A-Z]/.test(password),
+      lower: /[a-z]/.test(password),
+      number: /[0-9]/.test(password),
+      special: /[^A-Za-z0-9]/.test(password),
+    };
+
+    if (!checks.length) { setError('Password must be at least 8 characters.'); return; }
+    if (!checks.upper) { setError('Password must contain at least one uppercase letter.'); return; }
+    if (!checks.lower) { setError('Password must contain at least one lowercase letter.'); return; }
+    if (!checks.number) { setError('Password must contain at least one number.'); return; }
+    if (!checks.special) { setError('Password must contain at least one special character (!@#$%^&*...).'); return; }
+    if (password !== confirmPassword) { setError('Passwords do not match.'); return; }
 
     setStep(2);
   }
@@ -112,6 +120,19 @@ export default function RegisterPage() {
       setLoading(false);
     }
   }
+
+  const EyeIcon = ({ open }: { open: boolean }) => open ? (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
+      <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
+      <line x1="1" y1="1" x2="23" y2="23" />
+    </svg>
+  ) : (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#003087] via-[#002060] to-[#001540] px-4 py-8">
@@ -237,16 +258,26 @@ export default function RegisterPage() {
                 >
                   Password
                 </label>
-                <input
-                  id="regPassword"
-                  type="password"
-                  required
-                  autoComplete="new-password"
-                  placeholder="Min. 6 characters"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-white text-[#1a1a2e] placeholder-[#5a6577]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#003087]/30 focus:border-[#003087] transition-all"
-                />
+                <div className="relative">
+                  <input
+                    id="regPassword"
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    autoComplete="new-password"
+                    placeholder="Min. 8 characters, mixed case, number, special"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full px-4 py-3 pr-11 rounded-xl border border-[#e2e8f0] bg-white text-[#1a1a2e] placeholder-[#5a6577]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#003087]/30 focus:border-[#003087] transition-all"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#5a6577] hover:text-[#1a1a2e] transition-colors"
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  >
+                    <EyeIcon open={showPassword} />
+                  </button>
+                </div>
               </div>
 
               <div>
@@ -256,16 +287,33 @@ export default function RegisterPage() {
                 >
                   Confirm Password
                 </label>
-                <input
-                  id="confirmPassword"
-                  type="password"
-                  required
-                  autoComplete="new-password"
-                  placeholder="Re-enter your password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-[#e2e8f0] bg-white text-[#1a1a2e] placeholder-[#5a6577]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#003087]/30 focus:border-[#003087] transition-all"
-                />
+                <div className="relative">
+                  <input
+                    id="confirmPassword"
+                    type={showConfirm ? 'text' : 'password'}
+                    required
+                    autoComplete="new-password"
+                    placeholder="Re-enter your password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className={`w-full px-4 py-3 pr-11 rounded-xl border text-[#1a1a2e] placeholder-[#5a6577]/50 text-sm focus:outline-none focus:ring-2 transition-all ${
+                      confirmPassword && password !== confirmPassword
+                        ? 'border-[#E8443A] bg-[#E8443A]/5 focus:ring-[#E8443A]/30'
+                        : 'border-[#e2e8f0] bg-white focus:ring-[#003087]/30 focus:border-[#003087]'
+                    }`}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirm(!showConfirm)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#5a6577] hover:text-[#1a1a2e] transition-colors"
+                    aria-label={showConfirm ? 'Hide password' : 'Show password'}
+                  >
+                    <EyeIcon open={showConfirm} />
+                  </button>
+                </div>
+                {confirmPassword && password !== confirmPassword && (
+                  <p className="mt-1 text-xs text-[#E8443A]">Passwords do not match</p>
+                )}
               </div>
 
               <button
