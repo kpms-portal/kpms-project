@@ -48,25 +48,16 @@ export default function StudentsPage() {
   });
 
   const fetchStudents = useCallback(async () => {
-    const supabase = createClient();
-
-    const { data: studentsData, error: studentsError } = await supabase
-      .from("students")
-      .select("*, parent:profiles!students_parent_id_fkey(full_name)")
-      .order("full_name", { ascending: true });
-
-    if (studentsError) {
-      console.error("Error fetching students:", studentsError);
-      // Fallback: fetch without join
-      const { data: fallbackData } = await supabase
-        .from("students")
-        .select("*")
-        .order("full_name", { ascending: true });
-      setStudents((fallbackData || []) as StudentWithParent[]);
-    } else {
-      setStudents((studentsData || []) as StudentWithParent[]);
+    try {
+      const res = await fetch("/api/admin/students");
+      if (!res.ok) throw new Error("Failed to fetch");
+      const data = await res.json();
+      setStudents((data || []) as StudentWithParent[]);
+    } catch (err) {
+      console.error("Error fetching students:", err);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }, []);
 
   const fetchParents = useCallback(async () => {
@@ -337,7 +328,7 @@ export default function StudentsPage() {
 
       {/* Students Table */}
       {filtered.length === 0 ? (
-        <EmptyState icon={GraduationCap} message="No students match your filters." />
+        <EmptyState icon={<GraduationCap className="h-12 w-12" />} message="No students match your filters." />
       ) : (
         <Card>
           <CardContent className="p-0">
