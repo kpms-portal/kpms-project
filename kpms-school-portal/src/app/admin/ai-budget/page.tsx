@@ -343,7 +343,7 @@ export default function AIBudgetPage() {
         </CardHeader>
         <CardContent>
           {dailySpend.length === 0 ? (
-            <EmptyState icon={TrendingUp} message="No spending data for this month yet." />
+            <EmptyState icon={<TrendingUp className="h-12 w-12" />} message="No spending data for this month yet." />
           ) : (
             <div className="w-full h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -396,7 +396,7 @@ export default function AIBudgetPage() {
         <CardContent className="p-0">
           {studentCosts.length === 0 ? (
             <div className="p-6">
-              <EmptyState icon={Users} message="No per-student data available yet." />
+              <EmptyState icon={<Users className="h-12 w-12" />} message="No per-student data available yet." />
             </div>
           ) : (
             <>
