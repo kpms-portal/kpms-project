@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { LoadingState } from "@/components/ui/loading-state";
 import { EmptyState } from "@/components/ui/empty-state";
-import { createClient } from "@/lib/supabase/client";
+
 import { getInitials, formatDate } from "@/lib/utils";
 import { Plus, Search, X, Users, ChevronDown } from "lucide-react";
 import type { Profile, UserRole } from "@/types";
@@ -39,18 +39,16 @@ export default function UsersPage() {
   });
 
   const fetchUsers = useCallback(async () => {
-    const supabase = createClient();
-    const { data, error: fetchError } = await supabase
-      .from("profiles")
-      .select("*")
-      .order("created_at", { ascending: false });
-
-    if (fetchError) {
-      console.error("Error fetching users:", fetchError);
-    } else {
+    try {
+      const res = await fetch("/api/admin/users");
+      if (!res.ok) throw new Error("Failed to fetch");
+      const data = await res.json();
       setUsers(data || []);
+    } catch (err) {
+      console.error("Error fetching users:", err);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -241,7 +239,7 @@ export default function UsersPage() {
 
       {/* Users Table */}
       {filtered.length === 0 ? (
-        <EmptyState icon={Users} message="No users match your filters." />
+        <EmptyState icon={<Users className="h-12 w-12" />} message="No users match your filters." />
       ) : (
         <Card>
           <CardContent className="p-0">
